@@ -1,16 +1,4 @@
 "use strict";
-
-var arrHole = ["hole1", "hole2", "hole3"];
-const elemHole = document.getElementById("hole1");
-const elemHole2 = document.getElementById("hole2");
-const elemHole3 = document.getElementById("hole3");
-const elemHole4 = document.getElementById("hole4");
-const elemHole5 = document.getElementById("hole5");
-const elemHole6 = document.getElementById("hole6");
-const elemHole7 = document.getElementById("hole7");
-const elemHole8 = document.getElementById("hole8");
-const elemHole9 = document.getElementById("hole9");
-
 const elemDead = document.getElementById("dead");
 const elemLost = document.getElementById("lost");
 
@@ -43,12 +31,15 @@ function isWin() {
 
 }
 
-elemHole.onclick = clickHole;
-elemHole2.onclick = clickHole;
-elemHole3.onclick = clickHole;
-elemHole4.onclick = clickHole;
-elemHole5.onclick = clickHole;
-elemHole6.onclick = clickHole;
-elemHole7.onclick = clickHole;
-elemHole8.onclick = clickHole;
-elemHole9.onclick = clickHole;
+function getHole(index) {
+  var holeActive;
+  holeActive = document.getElementById(`hole${index}`);
+  return holeActive;
+} 
+
+
+for (var i=1; i<10; i++) {
+  var hole;
+  hole = getHole(i);
+  hole.onclick = clickHole;
+}
